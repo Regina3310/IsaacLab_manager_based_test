@@ -28,3 +28,5 @@ gym.register(
         "sb3_cfg_entry_point": f"{agents.__name__}:sb3_ppo_cfg.yaml",
     },
 )
+
+

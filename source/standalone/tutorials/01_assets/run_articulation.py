@@ -95,7 +95,7 @@ def run_simulator(sim: sim_utils.SimulationContext, entities: dict[str, Articula
             root_state = robot.data.default_root_state.clone()
             root_state[:, :3] += origins
             robot.write_root_state_to_sim(root_state)
-            # set joint positions with some noise
+            # set joint positions/velocity with some noise
             joint_pos, joint_vel = robot.data.default_joint_pos.clone(), robot.data.default_joint_vel.clone()
             joint_pos += torch.rand_like(joint_pos) * 0.1
             robot.write_joint_state_to_sim(joint_pos, joint_vel)
