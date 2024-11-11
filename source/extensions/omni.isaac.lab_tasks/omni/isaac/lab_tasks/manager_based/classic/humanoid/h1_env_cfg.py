@@ -63,11 +63,11 @@ class MySceneCfg(InteractiveSceneCfg):
         ),
         actuators={
             "body": ImplicitActuatorCfg(
-                joint_names_expr=[".*"], #所有關節
-                stiffness={ #關節剛度
-                    ".*_waist.*": 20.0, #腰部
+                joint_names_expr=[".*"],
+                stiffness={
+                    ".*_waist.*": 20.0,
                     ".*_upper_arm.*": 10.0,
-                    "pelvis": 10.0, #骨盆
+                    "pelvis": 10.0,
                     ".*_lower_arm": 2.0,
                     ".*_thigh:0": 10.0,
                     ".*_thigh:1": 20.0,
@@ -75,7 +75,7 @@ class MySceneCfg(InteractiveSceneCfg):
                     ".*_shin": 5.0,
                     ".*_foot.*": 2.0,
                 },
-                damping={ #阻尼
+                damping={
                     ".*_waist.*": 5.0,
                     ".*_upper_arm.*": 5.0,
                     "pelvis": 5.0,
@@ -256,7 +256,7 @@ class CurriculumCfg:
 
 
 @configclass
-class HumanoidEnvCfg(ManagerBasedRLEnvCfg):
+class H1EnvCfg(ManagerBasedRLEnvCfg):
     """Configuration for the MuJoCo-style Humanoid walking environment."""
 
     # Scene settings

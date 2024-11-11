@@ -9,7 +9,7 @@ Humanoid locomotion environment (similar to OpenAI Gym Humanoid-v2).
 
 import gymnasium as gym
 
-from . import agents, humanoid_env_cfg
+from . import agents, humanoid_env_cfg, h1_env_cfg
 
 ##
 # Register Gym environments.
@@ -21,6 +21,19 @@ gym.register(
     disable_env_checker=True,
     kwargs={
         "env_cfg_entry_point": humanoid_env_cfg.HumanoidEnvCfg,
+        "rsl_rl_cfg_entry_point": f"{agents.__name__}.rsl_rl_ppo_cfg:HumanoidPPORunnerCfg",
+        "rl_games_cfg_entry_point": f"{agents.__name__}:rl_games_ppo_cfg.yaml",
+        "skrl_cfg_entry_point": f"{agents.__name__}:skrl_ppo_cfg.yaml",
+        "sb3_cfg_entry_point": f"{agents.__name__}:sb3_ppo_cfg.yaml",
+    },
+)
+
+gym.register(
+    id="Isaac-H1-v0",
+    entry_point="omni.isaac.lab.envs:ManagerBasedRLEnv",
+    disable_env_checker=True,
+    kwargs={
+        "env_cfg_entry_point": h1_env_cfg.H1EnvCfg,
         "rsl_rl_cfg_entry_point": f"{agents.__name__}.rsl_rl_ppo_cfg:HumanoidPPORunnerCfg",
         "rl_games_cfg_entry_point": f"{agents.__name__}:rl_games_ppo_cfg.yaml",
         "skrl_cfg_entry_point": f"{agents.__name__}:skrl_ppo_cfg.yaml",
