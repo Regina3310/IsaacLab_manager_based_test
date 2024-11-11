@@ -23,7 +23,7 @@ and support for running in the cloud.
 
 Additionally, Isaac Lab provides over 26 environments, and we are actively working on adding more environments
 to the list. These include classic control tasks, fixed-arm and dexterous manipulation tasks, legged locomotion tasks,
-and navigation tasks. A complete list is in available in the `environments <source/overview/environments>`_ section.
+and navigation tasks. A complete list is available in the `environments <source/overview/environments>`_ section.
 
 The framework also includes over 16 robots. If you are looking to add a new robot, please refer to the
 :ref:`how-to` section. The current list of robots includes:
@@ -88,7 +88,7 @@ Table of Contents
    source/overview/reinforcement-learning/index
    source/overview/teleop_imitation
    source/overview/showroom
-   source/overview/basic_agents
+   source/overview/simple_agents
 
 .. toctree::
    :maxdepth: 2
@@ -98,7 +98,6 @@ Table of Contents
    source/features/multi_gpu
    source/features/tiled_rendering
    source/features/reproducibility
-   .. source/features/motion_generators
 
 .. toctree::
    :maxdepth: 1
@@ -128,6 +127,7 @@ Table of Contents
    :maxdepth: 1
    :caption: References
 
+   source/refs/reference_architecture/index
    source/refs/additional_resources
    source/refs/contributing
    source/refs/troubleshooting
